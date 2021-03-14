@@ -1,7 +1,18 @@
+@font-face {
+	font-family: 'default';
+	src: url(../style/fonts/default.TTF)
+}
+body{
+     background-color: #88a665;
+     color: white;
+     font-family: '04B_19__';
+}
 .tile{
      position: relative;
      display: inline-block;
      z-index: 5;
+     top: 10%;
+     left: 30%;
 }
 .tile img{
      position: relative;
@@ -12,7 +23,45 @@
      border-style: solid;
      border-width: 1px;
 }
-body{
-     background-color: blanchedalmond;
-     color: white;
+.hunter{
+     position: absolute;
+     top: 6.5%;
+     left: -0.5%;
+     z-index: 10;
+}
+.hunter img{
+     border-style: none;
+}
+.dwellershud{
+     position: absolute;
+     top: 0%;
+     left: 0%;
+     height: 99.2%;
+     width: 15%;
+     background-color: #4d243d;
+     border: #2f001c;
+     border-style: solid;
+     border-width: 4px;
+     box-shadow: 5px 2px 7px #1b1b1f;
+}
+.dwellershud h2{
+     font-family: 'default';
+     color: #b8c480;
+     font-size: 35px;
+     text-shadow: 3px 3px #1b1b1f;
+     margin-left: 50px;
+     letter-spacing: 2px;
+}
+.boardhud{
+     position: absolute;
+     height: 672px;
+     width: 672px;
+     left: 30.5%;
+     top: 10%;
+     background-color: #1b1b1f;
+     border: #1b1b1f;
+     border-style: solid;
+     border-width: 2px;
+     box-shadow: 10px 10px 15px #1b1b1f;
+     z-index: 1;
 }
