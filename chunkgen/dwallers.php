@@ -8,5 +8,6 @@
           $dweller_ypos = $register['dweller_ypos'];
           $dweller_move = $register['dweller_move'];
           $dweller_current_pos = $register['dweller_current_pos'];
+          $dweller_id = $register['dweller_id'];
      }
 ?>

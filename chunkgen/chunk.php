@@ -4,7 +4,7 @@
      session_start();
      $img = '../style/chars/char.png';
      $chunknum = 1;
-     $current_dweller = 1;
+     $current_dweller = 2;
 
      $_SESSION['hunter'] = 'hunter';
 
@@ -33,12 +33,14 @@
 
           ?>
           <div class = "tile">
-               <?php
-                    if (($tile_xaxis + $dweller_move >= $dweller_xpos && $tile_xaxis - $dweller_xpos <= $dweller_move ) &&
-                       ($tile_yaxis + $dweller_move >= $dweller_ypos && $tile_yaxis - $dweller_ypos <= $dweller_move ))
+          <?php
+
+               if ($dweller_id == $current_dweller){
+               if (($tile_xaxis + $dweller_move >= $dweller_xpos && $tile_xaxis - $dweller_xpos <= $dweller_move ) &&
+                    ($tile_yaxis + $dweller_move >= $dweller_ypos && $tile_yaxis - $dweller_ypos <= $dweller_move ))
                     {   ?>
                          <a href = "tile.php?id=<?php echo $tileid; ?>"> <?php 
-                    }?>  <img src="<?php echo $tilename?>" width="40"></a><?php 
+                    }}?>  <img src="<?php echo $tilename?>" width="40"></a><?php 
 
                $dwallerssql = "SELECT * FROM dwellers";
                $dwallersresult = mysqli_query($conn,$dwallerssql) or die("Error returning data");
@@ -67,6 +69,8 @@
 
      //MANDAR O CURRENT POS DO PERSONAGEM PARA O DB
      //SELECIONAR O PERSONAGEM 
+     //MOVEMENT == CURRENT DWELLER POSITION 
+     //CURRENT DWELLERS VARS = Buscar no DB onde o dweller é igual ao id current dweller, ai tu consegue se movimentar baseado nele.
 ?>
 <link rel="stylesheet" href="../css/index.css">
 <a href="chunkleft.php">Chunk Left</a>
