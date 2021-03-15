@@ -54,7 +54,7 @@
                     ($tile_yaxis + $dweller_move_m >= $dweller_ypos_m && $tile_yaxis - $dweller_ypos_m <= $dweller_move_m ))
                     {   ?>
                          <a href = "tile.php?id=<?php echo $tileid; ?>"> <?php 
-                    }}?>  <img src="<?php echo $tilename?>" width="40"></a><?php 
+                    }}?>  <img src="<?php echo $tilename?>" width="50"></a><?php 
 
                $dwallerssql = "SELECT * FROM dwellers";
                $dwallersresult = mysqli_query($conn,$dwallerssql) or die("Error returning data");

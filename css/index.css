@@ -37,20 +37,27 @@ body{
      top: 0%;
      left: 0%;
      height: 99.2%;
-     width: 15%;
+     width: 17.8%;
      background-color: #4d243d;
      border: #2f001c;
      border-style: solid;
      border-width: 4px;
      box-shadow: 5px 2px 7px #1b1b1f;
+     z-index: 5;
 }
 .dwellershud h2{
      font-family: 'default';
      color: #b8c480;
-     font-size: 35px;
-     text-shadow: 3px 3px #1b1b1f;
+     font-size: 55px;
+     text-shadow: 2px 2px 4px #000000;
      margin-left: 50px;
      letter-spacing: 2px;
+     z-index: 5;
+}
+.dwellershud img{
+     position: absolute;
+     top: 0%;
+     z-index: -1;
 }
 .boardhud{
      position: absolute;
