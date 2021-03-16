@@ -4,12 +4,13 @@
      //Carrega as janelas de hud
      include('../hud/dwellershud.php');
      include('../hud/boardhud.php');
+     include('./chunkleft.php');
 
      include('dwallers.php');
+     include('dwellerselect.php');
      session_start();
      $img = '../style/chars/orcicon2.png';
      $chunknum = 1;
-     $current_dweller = 1;
 
      $_SESSION['hunter'] = 'hunter';
 
@@ -19,7 +20,7 @@
           $tilenum = $register['tilenum'];
           $tile_xaxis = $register['tile_xaxis'];
           $tile_yaxis = $register['tile_yaxis'];
-          $tileid = $register['tileid'];
+          $tileid = $register['tile_id_gen'];
           $num = 2;
 
           if($tilenum == 1){
@@ -67,7 +68,12 @@
           
                     if($dweller_current_pos == $tileid){?>
                     <div class = "hunter">
-                         <img src="<?php echo $img?>" width="40" height="40">
+                         <img src="<?php echo $img?>" width="50" height="50">
+                              <div class = "selectdweller"> 
+                                   <?php 
+                                        include('../dwellersscript/dwellerselectscript.php');
+                                   ?>
+                              </div>
                     </div>     
                          <?php
                     }
@@ -87,4 +93,7 @@
      //CURRENT DWELLERS VARS = Buscar no DB onde o dweller é igual ao id current dweller, ai tu consegue se movimentar baseado nele.
 ?>
 <link rel="stylesheet" href="../css/index.css">
-<a href="chunkleft.php">Chunk Left</a>
+<body>
+     <a href="chunkleft.php">Chunk Left</a>
+     <img src="../style/backgrounds/florestbackground.png">
+</body>

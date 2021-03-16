@@ -6,6 +6,13 @@ body{
      background-color: #88a665;
      color: white;
      font-family: '04B_19__';
+     overflow-y: hidden;
+     overflow-x: hidden;
+}
+body img{
+     position: absolute;
+     top: -11%;
+     left: 0%;
 }
 .tile{
      position: relative;
@@ -32,6 +39,18 @@ body{
 .hunter img{
      border-style: none;
 }
+.hunter h2{
+     position: relative;
+     font-family: 'default';
+     color: white;
+     z-index: 25;
+}
+.selectdweller {
+     position: absolute;
+     top: -2%;
+     left: 114%;
+     z-index: 25;
+}
 .dwellershud{
      position: absolute;
      top: 0%;
@@ -48,11 +67,13 @@ body{
 .dwellershud h2{
      font-family: 'default';
      color: #b8c480;
-     font-size: 55px;
-     text-shadow: 2px 2px 4px #000000;
-     margin-left: 50px;
+     font-size: 45px;
+     margin-left: 55px;
      letter-spacing: 2px;
      z-index: 5;
+     -webkit-text-stroke-width: 2px;
+     -webkit-text-stroke-color: #1b1b1f;
+     font-size: 3em; color: #b8c480;
 }
 .dwellershud img{
      position: absolute;
@@ -61,9 +82,9 @@ body{
 }
 .boardhud{
      position: absolute;
-     height: 672px;
-     width: 672px;
-     left: 30.5%;
+     height: 832px;
+     width: 833px;
+     left: 30.6%;
      top: 10%;
      background-color: #1b1b1f;
      border: #1b1b1f;
@@ -71,4 +92,40 @@ body{
      border-width: 2px;
      box-shadow: 10px 10px 15px #1b1b1f;
      z-index: 1;
+}
+.dwellerslist {
+     position: absolute;
+     margin-top: 4%;
+     left: 0.5%;
+     font-family: 'default';
+     color: #1b1b1f;
+     z-index: 12;
+}
+.dwellerslist a{
+     position: relative;
+     font-family: 'default';
+     color: #b8c480;
+     -webkit-text-stroke-width: 2px;
+     -webkit-text-stroke-color: #1b1b1f;
+     font-size: 28px; color: #b8c480;
+     text-decoration: none;
+     line-height: 110%;
+}
+.dwellerslist a:hover{
+     position: relative;
+     font-family: 'default';
+     color: #b8c480;
+     -webkit-text-stroke-width: 2px;
+     -webkit-text-stroke-color: #1b1b1f;
+     font-size: 28px; color: white;
+     text-decoration: none;
+     line-height: 110%;
+}
+.chunkleft a{
+     position: absolute;
+     left: 80%;
+}
+.dwellerselectscripthud{
+     position: relative;
+     z-index: 30;
 }
