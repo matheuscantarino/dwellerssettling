@@ -1,8 +1,8 @@
 <?php
      include('../connection.php');
 
-     while ($tile_id_gen < 256){
 
+     while ($tileid < 256){
 
      if(empty($tileid)){
           $tileid = 0;
@@ -14,7 +14,9 @@
           $tile_yaxis = 1;  
        }
 
-     $tilechunk = 1;
+     if(empty($tilechunk)){
+          $tilechunk = 1;
+     }
 
 
      $sql = "SELECT * FROM tile";
@@ -28,13 +30,6 @@
           $tileid = $register['tileid'];
           $tile_xaxis = $register['tile_xaxis'];
           $tile_yaxis = $register['tile_yaxis'];
-          $tile_id_gen = $register['tile_id_gen'];  //Tile id_gen é igual o tile_id, mas pode repetir.
-          $tileidnew = $tile_id_gen + 1;
-          if($tileidnew > 255){
-               $tile_id_gen = 0;
-               //header('Location: ./chunk.php');
-               echo $tile_id_gen;
-          }
           if($tile_xaxis >= 16){
                $tile_xaxis = 0;
                $tile_yaxis = $tile_yaxis +1;
@@ -60,6 +55,15 @@
      }
 
 
+     $tileidnew = $tileid + 1;
+
+     if($tileidnew > 256){
+          $tileidnew = 0;
+          $tilechunk = $tilechunk + 1;
+          header('Location: ./chunk.php');
+     }
+
+
      if($tile == 1){
           $tilename = 'grasstile.png';
      }
@@ -73,20 +77,15 @@
           $tilename = 'rocktile.png';
      }
 
-     if($tileidnew == 256){
-          header('Location: ./chunk.php');
-     }
-
      //Define a coordenada do TILE
+     $tile_xaxis = $tile_xaxis +1;
 
      if($tile_xaxis > 16){
           $tile_xaxis = 1;
           $tile_yaxis = $tile_yaxis +1;
      }
 
-     $_SESSION['tile_gen'] = $tileidnew;
-
-     $sql = "INSERT INTO tile (tilename, tilenum, tile_id_gen, tilechunk, tile_xaxis, tile_yaxis)
+     $sql = "INSERT INTO tile (tilename, tilenum, tileid, tilechunk, tile_xaxis, tile_yaxis)
      VALUES ('$tilename', '$tile', '$tileidnew', '$tilechunk', '$tile_xaxis', '$tile_yaxis')";
      if (mysqli_query($conn, $sql)) {
           echo 'ok';
@@ -99,7 +98,6 @@
      //while ($tileid < 50){
           //header('Location: chunkgen.php');
      //}
-
 
 
      }

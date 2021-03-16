@@ -2,11 +2,11 @@
      include('../connection.php');
      $pageid = $_GET['id'];
      session_start();
-     $sql = "SELECT * FROM tile WHERE tile_id_gen = '{$pageid}'";
+     $sql = "SELECT * FROM tile WHERE tileid = '{$pageid}'";
      $result = mysqli_query($conn,$sql) or die("Error returning data");
      //$dweller_current = 1;
      while ($register = mysqli_fetch_array($result)){
-          $tileid = $register['tile_id_gen'];
+          $tileid = $register['tileid'];
           $tile_xaxis = $register['tile_xaxis'];
           $tile_yaxis = $register['tile_yaxis'];
           $_SESSION['current_pos'] = $tileid;

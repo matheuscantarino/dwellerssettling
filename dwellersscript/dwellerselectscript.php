@@ -1,7 +1,9 @@
 <?php
      if ($_SESSION['current_dweller'] == $dweller_id){
           ?>
-               <img src="../style/icons/selectdwellericon.png">
+               <div class = "dwellerselectboard">
+                    <p><?php echo $dweller_id?></p>
+               </div>
           <?php
      }
 ?>

@@ -14,13 +14,13 @@
 
      $_SESSION['hunter'] = 'hunter';
 
-     $sql = "SELECT * FROM tile WHERE tilechunk = {$chunknum}";
+     $sql = "SELECT * FROM tile WHERE tilechunk = {$chunknum} AND tileid > 0 AND tileid <= 256";
      $result = mysqli_query($conn,$sql) or die("Error returning data");
      while ($register = mysqli_fetch_array($result)){
           $tilenum = $register['tilenum'];
           $tile_xaxis = $register['tile_xaxis'];
           $tile_yaxis = $register['tile_yaxis'];
-          $tileid = $register['tile_id_gen'];
+          $tileid = $register['tileid'];
           $num = 2;
 
           if($tilenum == 1){

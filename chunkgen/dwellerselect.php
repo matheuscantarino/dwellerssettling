@@ -20,13 +20,8 @@
                $dweller_current_pos = $register['dweller_current_pos'];
 
                ?>
-                    <a href="dwellercurrent.php?id=<?php echo $dweller_id; ?>"><br><?php echo $dweller_name?></a> 
-               <?php if ($current_dweller == $dweller_id){
-                    ?>
-                         <p><</p>
-                    <?php
-               }
-
+                    <a href="dwellercurrent.php?id=<?php echo $dweller_id; ?>"><br><?php echo $dweller_name . '&nbsp' . '-' . '&nbsp' . $dweller_id?></a> 
+               <?php 
                }
           ?>
           </div>
