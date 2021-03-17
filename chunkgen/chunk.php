@@ -11,6 +11,7 @@
      session_start();
      $img = '../style/chars/orcicon2.png';
      $chunknum = 1;
+     $_SESSION['chunknum'] = 1;
 
      $_SESSION['hunter'] = 'hunter';
 
@@ -41,7 +42,7 @@
           <div class = "tile">
           <?php
 
-               $dwallers_move_sql = "SELECT * FROM dwellers WHERE dweller_id = '{$current_dweller}'";
+               $dwallers_move_sql = "SELECT * FROM dwellers WHERE dweller_id = '{$_SESSION['current_dweller']}'";
                $dwallers_move_result = mysqli_query($conn,$dwallers_move_sql) or die("Error returning data");
                while ($register = mysqli_fetch_array($dwallers_move_result)){
 
