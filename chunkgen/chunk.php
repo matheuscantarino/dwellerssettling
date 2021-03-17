@@ -11,7 +11,6 @@
      session_start();
      $img = '../style/chars/orcicon2.png';
      $chunknum = 1;
-     $_SESSION['chunknum'] = 1;
 
      $_SESSION['hunter'] = 'hunter';
 

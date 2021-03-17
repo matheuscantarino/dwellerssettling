@@ -1,6 +1,6 @@
 <?php
      include('../connection.php');
-     $_SESSION['current_dweller'] = 1;
+     //$current_dweller = 2;
 
      $dwallers_move_sql = "SELECT * FROM dwellers";
      $dwallers_move_result = mysqli_query($conn,$dwallers_move_sql) or die("Error returning data");

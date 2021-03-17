@@ -1,6 +1,6 @@
 <?php
      include('../connection.php');
-     session_start();
+
 
      while ($tileid < 256){
 
@@ -59,10 +59,10 @@
 
      if($tileidnew > 256){
           $tileidnew = 0;
+          $tilechunk = $tilechunk + 1;
           header('Location: ./chunk.php');
      }
 
-     $tilechunk = $_SESSION['chunknum'] + 1; + 1;
 
      if($tile == 1){
           $tilename = 'grasstile.png';
