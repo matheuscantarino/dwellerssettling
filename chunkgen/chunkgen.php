@@ -1,6 +1,7 @@
 <?php
      include('../connection.php');
 
+     $_SESSION['current_chunk'] = 0;
 
      while ($tileid < 256){
 
@@ -57,12 +58,13 @@
 
      $tileidnew = $tileid + 1;
 
+     $tilechunk = $_SESSION['current_chunk'] + 1;
+
      if($tileidnew > 256){
-          $tileidnew = 0;
+          $tileidnew = 1;
           $tilechunk = $tilechunk + 1;
           header('Location: ./chunk.php');
      }
-
 
      if($tile == 1){
           $tilename = 'grasstile.png';
@@ -83,6 +85,10 @@
      if($tile_xaxis > 16){
           $tile_xaxis = 1;
           $tile_yaxis = $tile_yaxis +1;
+     }
+
+     if($tile_yaxis > 16){
+          $tile_yaxis = 1;
      }
 
      $sql = "INSERT INTO tile (tilename, tilenum, tileid, tilechunk, tile_xaxis, tile_yaxis)
