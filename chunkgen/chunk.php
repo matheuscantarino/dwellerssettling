@@ -10,11 +10,10 @@
      session_start();
 
      $img = '../style/chars/orcicon2.png';
-     $chunknum = 1;
+     $_SESSION['chunknum'] = 1;
 
      $_SESSION['hunter'] = 'hunter';
-
-     $sql = "SELECT * FROM tile WHERE tilechunk = {$chunknum} AND tileid > 0 AND tileid <= 256";
+     $sql = "SELECT * FROM tile WHERE tilechunk = {$_SESSION['chunknum']} AND tileid > 0 AND tileid <= 256";
      $result = mysqli_query($conn,$sql) or die("Error returning data");
      while ($register = mysqli_fetch_array($result)){
           $tilenum = $register['tilenum'];
@@ -36,11 +35,9 @@
                $tilename = '../style/tiles/rockhaunted.png';
           }
 
-          
           ?>
           <div class = "tile">
           <?php
-
                $dwallers_move_sql = "SELECT * FROM dwellers WHERE dweller_id = '{$_SESSION['current_dweller']}'";
                $dwallers_move_result = mysqli_query($conn,$dwallers_move_sql) or die("Error returning data");
                while ($register = mysqli_fetch_array($dwallers_move_result)){
@@ -50,7 +47,6 @@
                $dweller_move_m = $register['dweller_move'];
                $dweller_id_m = $register['dweller_id'];
                $dweller_current_pos_m = $register['dweller_current_pos'];
-
                if (($tile_xaxis + $dweller_move_m >= $dweller_xpos_m && $tile_xaxis - $dweller_xpos_m <= $dweller_move_m ) &&
                     ($tile_yaxis + $dweller_move_m >= $dweller_ypos_m && $tile_yaxis - $dweller_ypos_m <= $dweller_move_m ))
                     {   ?>
@@ -72,7 +68,6 @@
                               <div class = "selectdweller"> 
                                    <?php 
                                         include('../dwellersscript/dwellerselectscript.php');
-                                        include('chunkchange.php');
                                    ?>
                               </div>
                     </div>     
@@ -86,8 +81,7 @@
                     ?><br><?php
                }
      }
-     
-     //include('chunkchange.php');
+     include('chunkchange.php');
      //MANDAR O CURRENT POS DO PERSONAGEM PARA O DB
      //SELECIONAR O PERSONAGEM 
      //MOVEMENT == CURRENT DWELLER POSITION 

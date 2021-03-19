@@ -6,8 +6,8 @@ body{
      background-color: #4d243d;
      color: white;
      font-family: '04B_19__';
-     overflow-y: hidden;
-     overflow-x: hidden;
+     /*overflow-y: hidden;
+     overflow-x: hidden;*/
 }
 body img{
      position: absolute;
@@ -17,7 +17,7 @@ body img{
 .tile{
      position: relative;
      display: inline-block;
-     z-index: 5;
+     z-index: 10;
      top: 10%;
      left: 30%;
 }
@@ -29,12 +29,12 @@ body img{
      border: #1b1b1f;
      border-style: solid;
      border-width: 1px;
+     z-index: 10;
 }
 .hunter{
      position: absolute;
      top: 6.5%;
      left: -0.5%;
-     z-index: 10;
 }
 .hunter img{
      border-style: none;
@@ -43,7 +43,6 @@ body img{
      position: relative;
      font-family: 'default';
      color: white;
-     z-index: 25;
 }
 .selectdweller {
      position: absolute;
@@ -135,12 +134,33 @@ body img{
      position: relative;
      z-index: 30;
 }
-.chunktravel{
-     position: relative;
-     z-index: 60;
-     font-size: 300%;
-     margin-top: -5%;
-     left: 70%;
+.chunktravel16x{
+     position: absolute;
+     font-size: 32px;
+     top: 11.5%;
+     left: 76%;
      color: #ff0054;
      font-family: 'default';
+     z-index: 50;
 }
+.chunktravel16x a{
+     text-decoration: none;
+     color: #ff0054;
+     z-index: 50;
+}
+.chunktravel16y{
+     position: absolute;
+     font-size: 34px;
+     top: 6.5%;
+     left: 73.5%;
+     color: #ff0054;
+     font-family: 'default';
+     z-index: 50;
+     transform: rotate(-90deg);
+}
+.chunktravel16y a{
+     text-decoration: none;
+     color: #ff0054;
+     z-index: 50;
+}
+
