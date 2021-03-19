@@ -1,6 +1,5 @@
 <?php
      include('../connection.php');
-
      //Carrega as janelas de hud
      include('../hud/dwellershud.php');
      include('../hud/boardhud.php');
@@ -9,6 +8,7 @@
      include('dwallers.php');
      include('dwellerselect.php');
      session_start();
+
      $img = '../style/chars/orcicon2.png';
      $chunknum = 1;
 
@@ -36,7 +36,7 @@
                $tilename = '../style/tiles/rockhaunted.png';
           }
 
-
+          
           ?>
           <div class = "tile">
           <?php
@@ -72,21 +72,22 @@
                               <div class = "selectdweller"> 
                                    <?php 
                                         include('../dwellersscript/dwellerselectscript.php');
+                                        include('chunkchange.php');
                                    ?>
                               </div>
                     </div>     
                          <?php
-                    }
-               }?>
+                    }         
+               }
+               ?>
           </div>
-          
-          <?php 
+          <?php
                if(($tileid == 16) or ($tileid == 32) or ($tileid == 48) or ($tileid == 64) or ($tileid == 80) or ($tileid == 96) or ($tileid == 112) or ($tileid == 128) or ($tileid == 144) or ($tileid == 144) or ($tileid == 160) or ($tileid == 176) or ($tileid == 192) or ($tileid == 208) or ($tileid == 224) or ($tileid == 240)){
                     ?><br><?php
                }
      }
      
-
+     //include('chunkchange.php');
      //MANDAR O CURRENT POS DO PERSONAGEM PARA O DB
      //SELECIONAR O PERSONAGEM 
      //MOVEMENT == CURRENT DWELLER POSITION 
