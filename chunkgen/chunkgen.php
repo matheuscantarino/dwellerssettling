@@ -1,7 +1,7 @@
 <?php
      include('../connection.php');
 
-     $_SESSION['current_chunk'] = 0;
+     $_SESSION['current_chunk'] = 1;
 
      while ($tileid < 256){
 

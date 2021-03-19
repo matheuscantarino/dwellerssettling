@@ -10,7 +10,9 @@
      session_start();
 
      $img = '../style/chars/orcicon2.png';
-     $_SESSION['chunknum'] = 1;
+     if (empty($_SESSION['chunknum'])){
+          $_SESSION['chunknum'] = 1;
+     }
 
      $_SESSION['hunter'] = 'hunter';
      $sql = "SELECT * FROM tile WHERE tilechunk = {$_SESSION['chunknum']} AND tileid > 0 AND tileid <= 256";

@@ -163,4 +163,19 @@ body img{
      color: #ff0054;
      z-index: 50;
 }
+.chunktravel1x{
+     position: absolute;
+     font-size: 34px;
+     top: 10.7%;
+     left: 29.2%;
+     color: #ff0054;
+     font-family: 'default';
+     z-index: 50;
+     transform: rotate(-180deg);
+}
+.chunktravel1x a{
+     text-decoration: none;
+     color: #ff0054;
+     z-index: 50;
+}
 

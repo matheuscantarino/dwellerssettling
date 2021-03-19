@@ -15,7 +15,7 @@
           <?php
                if($dweller_current_pos_chunkchange == 16){
                     ?>
-                         <a href="../chunkmove/chunkleft.php">></a>
+                         <a href="../chunkmove/chunkright.php">></a>
                     <?php
                }
           
@@ -26,6 +26,16 @@
                if($dweller_current_pos_chunkchange == 16){
                     ?>
                          <a href="../chunkmove/chunktop.php">></a>
+                    <?php
+               }
+          
+          ?>
+          </div>
+          <div class = "chunktravel1x">
+          <?php
+               if($dweller_current_pos_chunkchange == 1){
+                    ?>
+                         <a href="../chunkmove/chunkleft.php">></a>
                     <?php
                }
           
