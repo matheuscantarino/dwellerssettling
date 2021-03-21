@@ -27,8 +27,22 @@
           $chunkcurrent_num = $register['chunk_num'];
           $_SESSION['chunknum'] = $chunkcurrent_num;
 
-          echo $chunkcurrent_num;
-          echo 'segundo funcionando';
+          //echo $chunkcurrent_num;
+          //echo 'segundo funcionando';
+          $dweller_xpos_new = $_SESSION['$dweller_xpos_m']; - 15;
+          $dweller_ypos_new = $_SESSION['$dweller_ypos_m'];
+          $dweller_current_pos_new = $_SESSION['dweller_current_pos_m'] - 15;
+
+          $chunkright_dwellerpos_sql = "UPDATE dwellers SET dweller_current_pos = '{$dweller_current_pos_new}' WHERE dweller_id = '{$_SESSION['current_dweller']}'";
+          if ($conn->query($chunkright_dwellerpos_sql) === TRUE) {
+               } else {
+          }
+          
+          $dweller_xpos_sql = "UPDATE dwellers SET dweller_xpos = '{$dweller_xpos_new}' WHERE dweller_id = '{$_SESSION['current_dweller']}'";
+          if ($conn->query($dweller_xpos_sql) === TRUE) {
+               } else {
+          }
+
           header('Location: ../chunkgen/chunk.php');
      }
 
