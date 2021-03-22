@@ -49,9 +49,11 @@
                $dweller_move_m = $register['dweller_move'];
                $dweller_id_m = $register['dweller_id'];
                $dweller_current_pos_m = $register['dweller_current_pos'];
+               $dweller_chunk_m = $register['dweller_chunk'];
                $_SESSION['dweller_current_pos_m'] = $dweller_current_pos_m;
                $_SESSION['$dweller_xpos_m'] = $dweller_xpos_m;
                $_SESSION['$dweller_ypos_m'] = $dweller_ypos_m;
+               $_SESSION['dweller_chunk_m'] = $dweller_chunk_m;
 
                if (($tile_xaxis + $dweller_move_m >= $dweller_xpos_m && $tile_xaxis - $dweller_xpos_m <= $dweller_move_m ) &&
                     ($tile_yaxis + $dweller_move_m >= $dweller_ypos_m && $tile_yaxis - $dweller_ypos_m <= $dweller_move_m ))
@@ -59,7 +61,7 @@
                          <a href = "tile.php?id=<?php echo $tileid; ?>"> <?php 
                     }}?>  <img src="<?php echo $tilename?>" width="50"></a><?php 
 
-               $dwallerssql = "SELECT * FROM dwellers";
+               $dwallerssql = "SELECT * FROM dwellers WHERE dweller_chunk = '{$_SESSION['chunknum']}'";
                $dwallersresult = mysqli_query($conn,$dwallerssql) or die("Error returning data");
                while ($register = mysqli_fetch_array($dwallersresult)){
                     $dweller_xpos = $register['dweller_xpos'];
