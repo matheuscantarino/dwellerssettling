@@ -1,13 +1,25 @@
 <?php
+
+     session_start();
+
      include('../connection.php');
      //Carrega as janelas de hud
      include('../hud/dwellershud.php');
      include('../hud/boardhud.php');
+     include('../hud/dwellersactionhud.php');
+
+     if($_SESSION['current_management_hud'] == 'constructionhud'){
+          include('../hud/constructionhud.php');  
+     }
+     
+     if($_SESSION['current_management_hud'] == 'managementhud'){
+          include('../hud/managementhud.php');
+     }
+
      include('./chunkleft.php');
 
      include('dwallers.php');
      include('dwellerselect.php');
-     session_start();
 
      $img = '../style/chars/orcicon2.png';
      if (empty($_SESSION['chunknum'])){
@@ -17,6 +29,12 @@
      $_SESSION['hunter'] = 'hunter';
      $sql = "SELECT * FROM tile WHERE tilechunk = {$_SESSION['chunknum']} AND tileid > 0 AND tileid <= 256";
      $result = mysqli_query($conn,$sql) or die("Error returning data");
+     
+     $rowcount=mysqli_num_rows($result);
+     if($rowcount == 1){
+          //header('Location: ./chunkgen.php');
+     }
+
      while ($register = mysqli_fetch_array($result)){
           $tilenum = $register['tilenum'];
           $tile_xaxis = $register['tile_xaxis'];
@@ -64,6 +82,7 @@
                $dwallerssql = "SELECT * FROM dwellers WHERE dweller_chunk = '{$_SESSION['chunknum']}'";
                $dwallersresult = mysqli_query($conn,$dwallerssql) or die("Error returning data");
                while ($register = mysqli_fetch_array($dwallersresult)){
+                    $dweller_icon = $register['dweller_icon'];
                     $dweller_xpos = $register['dweller_xpos'];
                     $dweller_ypos = $register['dweller_ypos'];
                     $dweller_move = $register['dweller_move'];
@@ -72,7 +91,7 @@
           
                     if($dweller_current_pos == $tileid){?>
                     <div class = "hunter">
-                         <img src="<?php echo $img?>" width="50" height="50">
+                         <img src="<?php echo $dweller_icon?>" width="50" height="50">
                               <div class = "selectdweller"> 
                                    <?php 
                                         include('../dwellersscript/dwellerselectscript.php');

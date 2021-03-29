@@ -1,7 +1,9 @@
+  
 <?php
-     include('../connection.php');
 
-     $_SESSION['current_chunk'] = 1;
+     session_start();
+
+     include('../connection.php');
 
      while ($tileid < 256){
 
@@ -58,7 +60,7 @@
 
      $tileidnew = $tileid + 1;
 
-     $tilechunk = $_SESSION['current_chunk'] + 1;
+     $tilechunk = $_SESSION['dweller_chunk_m'] + 1;
 
      if($tileidnew > 256){
           $tileidnew = 1;

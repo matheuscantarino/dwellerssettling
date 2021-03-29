@@ -21,7 +21,9 @@
 
      $chunkright_sql = "SELECT * FROM chunk WHERE chunk_xaxis = '{$chunk_right_travel_x}'";
      $chunkright_result = mysqli_query($conn,$chunkright_sql) or die("Error returning data");
+
      while ($register = mysqli_fetch_array($chunkright_result)){
+
           $chunkcurrent_xaxis = $register['chunk_xaxis'];
           $chunkcurrent_yaxis = $register['chunk_yaxis'];
           $chunkcurrent_num = $register['chunk_num'];
@@ -48,7 +50,6 @@
           }
 
           header('Location: ../chunkgen/chunk.php');
-     }
 
-     
+     }
 ?>

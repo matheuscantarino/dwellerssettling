@@ -178,4 +178,124 @@ body img{
      color: #ff0054;
      z-index: 50;
 }
+.dwellersactionhud{
+     position: absolute;
+     height: 21.5%;
+     width: 23%;
+     top: 76%;
+     left: 76.2%;
+     background-color: #4d243d;
+     border: #1b1b1f;
+     border-style: solid;
+     border-width: 2px;
+     box-shadow: 10px 10px 15px #1b1b1f;
+     z-index: 15;
+}
+.dwellersactionhud h2{
+     margin-top: 0.5%;
+     margin-left: 1%;
+     font-family: 'default';
+     color: #b8c480;
+     -webkit-text-stroke-width: 2px;
+     -webkit-text-stroke-color: #1b1b1f;
+     font-size: 32px; color: #b8c480;
+     text-decoration: none;
+}
+.professionactionbk{
+     position: absolute;
+     top: 18%;
+     left: 1%;
+     height: 21%;
+     width: 10%;
+     background-color: #430029;
+     border: #1b1b1f;
+     border-style: solid;
+     border-width: 2px;
+     
+}
+.professionactionbk:hover{
+     background-color: #ff0054;
+}
+.professionactionbk img{
+     position: absolute;
+     top: 1%;
+}
+.managementhud{
+     position: absolute;
+     top: 10.3%;
+     left: 76.2%;
+     width: 23%;
+     height: 65%;
+     z-index: 15;
+     background-color: #4d243d;
+     border: #1b1b1f;
+     border-style: solid;
+     border-width: 2px;
+}
+.managementhud h2{
+     margin-top: 0.5%;
+     margin-left: 1%;
+     font-family: 'default';
+     color: #b8c480;
+     -webkit-text-stroke-width: 2px;
+     -webkit-text-stroke-color: #1b1b1f;
+     font-size: 32px; color: #b8c480;
+     text-decoration: none;
+}
+.constructionicon {
+     position: absolute;
+     top: 6%;
+     left: 1%;
+     height: 6.5%;
+     width: 9.5%;
+     background-color: #430029;
+     border: #1b1b1f;
+     border-style: solid;
+     border-width: 2px;
+}
+.constructionicon h3{
+     margin-top: 20%;
+     margin-left: 120%;
+     font-family: 'default';
+     color: #b8c480;
+     -webkit-text-stroke-width: 2px;
+     -webkit-text-stroke-color: #1b1b1f;
+     font-size: 28px; color: #f7a04f;
+     text-decoration: none;  
+}
+.constructionicon:hover{
+     background-color: #ff0054; 
+}
+.constructionicon img{
+     position: absolute;
+     top: 5%;
+     left: 1%;
+}
+.constructionhud{
+     position: absolute;
+     top: 10.3%;
+     left: 76.2%;
+     width: 23%;
+     height: 65%;
+     z-index: 15;
+     background-color: #4d243d;
+     border: #1b1b1f;
+     border-style: solid;
+     border-width: 2px;
+     z-index: 90;
+}
+.constructionbackicon a{
+     position: absolute;
+     font-size: 32px;
+     top: 0.5%;
+     left: 1%;
+     color: #ff0054;
+     font-family: 'default';
+}
+.constructionbackicon a {
+     text-decoration: none;
+     color: #ff0054;
+     z-index: 50;
+}
+
 
